@@ -28,4 +28,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
     public void render(SpriteBatch batch){
         sprite.draw(batch);
     }
+
+    public void  atacar(){
+
+
+
+    }
+
+
 }
