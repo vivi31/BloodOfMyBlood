@@ -13,12 +13,50 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
         private int health = 100;
 
 
+        private boolean vivo;
+
+        private String nombre;
 
     public Personaje (Texture textura, float x, float y){
         sprite = new Sprite(textura);
         sprite.setPosition(x,y);
 
     }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        private void isAlive(){
+
+        if (health > 0){
+            vivo = true;
+        }
+    }
+
+
+    public void  atacar(){
+
+
+        }
+
+    public void setHealth(int health){
+        this.health = health;
+    }
+
+    public void recibeDano(int danoRecibido){
+        this.health = health - danoRecibido;
+    }
+
+    public void cure(int hp){
+        this.health = health + hp;
+    }
+
+
 
     public void mover (float dx){
         sprite.setX(sprite.getX()+dx);
@@ -29,11 +67,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
         sprite.draw(batch);
     }
 
-    public void  atacar(){
-
-
-
-    }
 
 
 }
