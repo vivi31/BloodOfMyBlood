@@ -10,6 +10,8 @@ class Personaje {
     private Texture texturaArriba;
     private Texture texturaAbajo;
 
+    private int health = 100;
+
     public Personaje (Texture textura, float x, float y){
         sprite = new Sprite(textura);
         sprite.setPosition(x,y);
