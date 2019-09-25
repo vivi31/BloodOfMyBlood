@@ -5,12 +5,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-class Personaje {
-    private Sprite sprite;
-    private Texture texturaArriba;
-    private Texture texturaAbajo;
+    public class Personaje {
+        private Sprite sprite;
+        private Texture texturaArriba;
+        private Texture texturaAbajo;
 
-    private int health = 100;
+        private int health = 100;
+
+
 
     public Personaje (Texture textura, float x, float y){
         sprite = new Sprite(textura);
