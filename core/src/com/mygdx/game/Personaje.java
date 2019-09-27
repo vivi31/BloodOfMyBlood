@@ -17,6 +17,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
         private String nombre;
 
+    private int salud;
+
     public Personaje (Texture textura, float x, float y){
         sprite = new Sprite(textura);
         sprite.setPosition(x,y);
