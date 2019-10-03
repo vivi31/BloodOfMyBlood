@@ -16,13 +16,7 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 class Nivel1 extends Nivel{
-
-    private final String sexo;
-    private OrthographicCamera camara;
-    private Viewport vista;
     private Juego juego;
-    private SpriteBatch batch;
-
 
     //fondo
     private Texture texturaFondo;
@@ -38,9 +32,8 @@ class Nivel1 extends Nivel{
     // Herramientas
     private Texture texturaBarraVida;
 
-    public Nivel1(Juego juego, String sexo) {
+    public Nivel1(Juego juego) {
         this.juego = juego;
-        this.sexo = sexo;
     }
 
     @Override
@@ -54,13 +47,14 @@ class Nivel1 extends Nivel{
     }
 
     private void crearPersonaje() {
-        if(sexo == "hombre"){
+       /* if(sexo == "hombre"){
             Texture texturaPersonaje = new Texture("Personajes/TexturaHombre.png");
             personaje = new Personaje(texturaPersonaje, 300 , 50);
         }else{
             Texture texturaPersonaje = new Texture("Personajes/TxturaMujer.png");
             personaje = new Personaje(texturaPersonaje, 300 , 40);
-        }
+        }*/
+       personaje = new Personaje();
 
     }
 

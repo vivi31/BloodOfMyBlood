@@ -21,12 +21,12 @@ public abstract class Nivel implements Screen {
     private int dificultad; // 1,2,3,4,5
     //Texturas fondo y botones.
     private Texture texturaFondo;
-    private  Texture texturaBarraVida;
+    private Texture texturaBarraVida;
     private Texture texturaBotonPausa;
     private Texture texturaBotonAjustes;
 
-    //Textura personajes
-    private Texture texturaPersonaje;
+    //Texturas personajes
+    private Texture texturaPersonaje; //ESTO ES AQUI O EN PERSNOAJEEEEE?
 
     public Nivel(Juego juego){
         this.juego = juego;
