@@ -15,12 +15,12 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
-public class Nivel1 implements Screen {
-    private final Juego juego;
+class Nivel1 extends Nivel{
+
     private final String sexo;
     private OrthographicCamera camara;
     private Viewport vista;
-
+    private Juego juego;
     private SpriteBatch batch;
 
 
@@ -37,6 +37,7 @@ public class Nivel1 implements Screen {
 
     // Herramientas
     private Texture texturaBarraVida;
+
     public Nivel1(Juego juego, String sexo) {
         this.juego = juego;
         this.sexo = sexo;
