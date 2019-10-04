@@ -61,15 +61,15 @@ class PantallaSeleccion implements Screen {
 
     private void crearHUD() {
         escenaHUD = new Stage(vista);
-        TextureRegionDrawable trdBack = new TextureRegionDrawable(new TextureRegion(new Texture("back.png")));
-        TextureRegionDrawable trdBackPressed = new TextureRegionDrawable(new TextureRegion(new Texture("backPressed.png")));
+       // TextureRegionDrawable trdBack = new TextureRegionDrawable(new TextureRegion(new Texture("back.png")));
+        //TextureRegionDrawable trdBackPressed = new TextureRegionDrawable(new TextureRegion(new Texture("backPressed.png")));
 
 
-        final ImageButton btnBack = new ImageButton(trdBack,trdBackPressed);
-        btnBack.setPosition(0, Juego.ALTO - btnBack.getHeight());
+       // final ImageButton btnBack = new ImageButton(trdBack,trdBackPressed);
+       // btnBack.setPosition(0, Juego.ALTO - btnBack.getHeight());
 
         //Evento de boton.
-        btnBack.addListener(new ClickListener(){
+        /*btnBack.addListener(new ClickListener(){
                                 @Override
                                 public void clicked(InputEvent event, float x, float y) {
                                     super.clicked(event, x, y);
@@ -77,10 +77,10 @@ class PantallaSeleccion implements Screen {
                                     juego.setScreen(new PantallaMenu(juego));
                                 }
                             }
-        );
+        );*/
 
 
-        escenaHUD.addActor(btnBack);
+       // escenaHUD.addActor(btnBack);
 
         //botones para mover
         TextureRegionDrawable trdHombre = new TextureRegionDrawable(new TextureRegion(new Texture("Personajes/TexturaHombre.png")));
