@@ -31,6 +31,9 @@ class PantallaSeleccion implements Screen {
     private Personaje personajeHombre;
     private Personaje personajeMujer;
 
+    //acerca de
+    private PantallaAcerca acerca;
+
     //Texturas
     private Texture textoSeleccionar;
 
@@ -45,7 +48,7 @@ class PantallaSeleccion implements Screen {
         configurarVista();
         cargarTexturas();
         crearHUD();
-//        crearPersonaje();
+
     }
 
   /*  private void crearPersonaje() {
@@ -58,15 +61,15 @@ class PantallaSeleccion implements Screen {
 
     private void crearHUD() {
         escenaHUD = new Stage(vista);
-        TextureRegionDrawable trdBack = new TextureRegionDrawable(new TextureRegion(new Texture("back.png")));
-        TextureRegionDrawable trdBackPressed = new TextureRegionDrawable(new TextureRegion(new Texture("backPressed.png")));
+       // TextureRegionDrawable trdBack = new TextureRegionDrawable(new TextureRegion(new Texture("back.png")));
+        //TextureRegionDrawable trdBackPressed = new TextureRegionDrawable(new TextureRegion(new Texture("backPressed.png")));
 
 
-        final ImageButton btnBack = new ImageButton(trdBack,trdBackPressed);
-        btnBack.setPosition(0, Juego.ALTO - btnBack.getHeight());
+       // final ImageButton btnBack = new ImageButton(trdBack,trdBackPressed);
+       // btnBack.setPosition(0, Juego.ALTO - btnBack.getHeight());
 
         //Evento de boton.
-        btnBack.addListener(new ClickListener(){
+        /*btnBack.addListener(new ClickListener(){
                                 @Override
                                 public void clicked(InputEvent event, float x, float y) {
                                     super.clicked(event, x, y);
@@ -74,24 +77,26 @@ class PantallaSeleccion implements Screen {
                                     juego.setScreen(new PantallaMenu(juego));
                                 }
                             }
-        );
+        );*/
 
 
-        escenaHUD.addActor(btnBack);
+       // escenaHUD.addActor(btnBack);
 
         //botones para mover
         TextureRegionDrawable trdHombre = new TextureRegionDrawable(new TextureRegion(new Texture("Personajes/TexturaHombre.png")));
-/*
-        TextureRegionDrawable trdHombrePressed = new TextureRegionDrawable(new TextureRegion(new Texture("btnHombre2.png")));
-*/
         TextureRegionDrawable trdMujer  = new TextureRegionDrawable(new TextureRegion(new Texture("Personajes/TxturaMujer.png")));
-        /*TextureRegionDrawable trdMujerPessed  = new TextureRegionDrawable(new TextureRegion(new Texture("btnMujer2.png")));*/
+
+        //boton de info
+        TextureRegionDrawable trdInfo = new TextureRegionDrawable(new TextureRegion(new Texture("acerca.png")));
 
         ImageButton  btnHombre = new ImageButton(trdHombre);
         ImageButton  btnMujer = new ImageButton(trdMujer);
+        ImageButton  btnAcerca = new ImageButton(trdInfo);
 
         btnHombre.setPosition(juego.ANCHO - 500 , 100);
         btnMujer.setPosition( juego.ANCHO -1000,100);
+        btnAcerca.setPosition(juego.ANCHO-btnAcerca.getWidth(), juego.ALTO-btnAcerca.getHeight());
+
 
         //Evento botones Sexo
         btnHombre.addListener(new ClickListener(){
@@ -112,8 +117,19 @@ class PantallaSeleccion implements Screen {
                                   }
                               }
         );
+        btnAcerca.addListener(new ClickListener(){
+                                  @Override
+                                  public void clicked(InputEvent event, float x, float y) {
+                                      super.clicked(event, x, y);
+                                      //INSTRUCCIONEs
+                                      juego.setScreen(new PantallaAcerca(juego));
+                                  }
+                              }
+        );
+
         escenaHUD.addActor(btnHombre);
         escenaHUD.addActor(btnMujer);
+        escenaHUD.addActor(btnAcerca);
 
         Gdx.input.setInputProcessor(escenaHUD);
 

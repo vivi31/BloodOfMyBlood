@@ -15,14 +15,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
-public class Nivel1 implements Screen {
-    private final Juego juego;
-    private final String sexo;
-    private OrthographicCamera camara;
-    private Viewport vista;
-
-    private SpriteBatch batch;
-
+class Nivel1 extends Nivel{
+    private Juego juego;
 
     //fondo
     private Texture texturaFondo;
@@ -40,9 +34,9 @@ public class Nivel1 implements Screen {
 
     // Herramientas
     private Texture texturaBarraVida;
-    public Nivel1(Juego juego, String sexo) {
+
+    public Nivel1(Juego juego) {
         this.juego = juego;
-        this.sexo = sexo;
     }
 
     @Override
@@ -62,13 +56,14 @@ public class Nivel1 implements Screen {
     }
 
     private void crearPersonaje() {
-        if(sexo == "hombre"){
+       /* if(sexo == "hombre"){
             Texture texturaPersonaje = new Texture("Personajes/TexturaHombre.png");
             personaje = new Personaje(texturaPersonaje, 300 , 50);
         }else{
             Texture texturaPersonaje = new Texture("Personajes/TxturaMujer.png");
             personaje = new Personaje(texturaPersonaje, 300 , 40);
-        }
+        }*/
+       personaje = new Personaje();
 
     }
 
