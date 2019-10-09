@@ -9,7 +9,8 @@ public class Juego extends Game {
 
 	@Override
 	public void create() {
-		setScreen(new PantallaMenu(this)); //referencia del administracion  para pasar de pantalla a otra
+		//setScreen(new PantallaMenu(this)); //referencia del administracion  para pasar de pantalla a otra
+		setScreen(new Nivel1(this, "hombre"));
 
 	}
 }

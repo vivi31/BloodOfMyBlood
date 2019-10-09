@@ -35,6 +35,9 @@ public class Nivel1 implements Screen {
     private Nivel1.Movimiento estadoPersonaje = Nivel1.Movimiento.QUIETO;
     private Texture texturaPersonaje;
 
+    //Enemigo
+    private Enemigo enemigo;
+
     // Herramientas
     private Texture texturaBarraVida;
     public Nivel1(Juego juego, String sexo) {
@@ -48,8 +51,14 @@ public class Nivel1 implements Screen {
         cargarTexturas();
         crearHUD();
         crearPersonaje();
+        crearEnemigo();
         //crearHerramientas();
 
+    }
+
+    private void crearEnemigo() {
+        Texture texturaEnemgio = new Texture("EnemigoPrototipo/Enemigo_Proto_200x300.png");
+        enemigo = new Enemigo(texturaEnemgio, 800,50);
     }
 
     private void crearPersonaje() {
@@ -148,8 +157,11 @@ public class Nivel1 implements Screen {
 
     @Override
     public void render(float delta) {
-        //ACTUALIZAR NAVE
+        //ACTUALIZAR PERSONAJE
         actualizarPersonaje();
+        enemigo.perseguir(personaje);
+
+
 
         borrarPantalla();
         //batch escalaTodo de acuerdo a la visat y la camara
@@ -159,6 +171,7 @@ public class Nivel1 implements Screen {
         batch.draw(texturaFondo, 0, 0);
         batch.draw(texturaBarraVida, 800, 800);
         personaje.render(batch);
+        enemigo.render(batch);
         batch.end();
         escenaHUD.draw();
     }

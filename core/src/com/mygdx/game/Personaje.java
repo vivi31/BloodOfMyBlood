@@ -67,6 +67,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
         sprite.draw(batch);
     }
 
-
+    public float getX(){
+        return sprite.getX();
+    }
 
 }
