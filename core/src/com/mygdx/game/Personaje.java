@@ -53,7 +53,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
     }
 
     public void recibeDano(int danoRecibido){
-        this.health = health - Enemigo;
+        this.health = health - 20;
     }
 
     public void cure(int hp){
